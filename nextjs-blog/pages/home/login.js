@@ -17,8 +17,8 @@ const Login = () => {
 
         // Perform the API call
         try {
-            //const response = await fetch('https://www.kaspergaupmadsen.no/api/token/', {
-            const response = await fetch('http://localhost:8000/api/token/', {
+            const response = await fetch('https://www.kaspergaupmadsen.no/api/token/', {
+            //const response = await fetch('http://localhost:8000/api/token/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
