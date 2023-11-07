@@ -12,7 +12,7 @@ const Patients = () => {
   const [loading, setLoading] = useState('');
 
   useEffect(() => {
-    fetch("https://www.kaspergaupmadsen.no/Patients/")
+    fetch("https://api.kaspergaupmadsen.no/Patients/")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");

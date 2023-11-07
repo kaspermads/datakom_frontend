@@ -17,7 +17,7 @@ const Register = () => {
 
         // Perform the API call
         try {
-            const response = await fetch('https://www.kaspergaupmadsen.no/api/register/', {
+            const response = await fetch('https://api.kaspergaupmadsen.no/api/register/', {
             //const response = await fetch('http://localhost:8000/api/register/', {
                 method: 'POST',
                 headers: {
