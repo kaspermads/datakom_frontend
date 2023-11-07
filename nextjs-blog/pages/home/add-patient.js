@@ -25,8 +25,11 @@ const AddPatient = () => {
     const [csrfToken, setCsrfToken] = useState('');
 
     useEffect(() => {
-        setCsrfToken(getCSRFToken());
-    }, []); 
+        const token = getCSRFToken();
+        if (token !== csrfToken) {
+            setCsrfToken(token);
+            }
+        }, []); 
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -46,7 +49,7 @@ const AddPatient = () => {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'X-CSRFToken': csrfToken
+                    ...(csrfToken ? { 'X-CSRFToken': csrfToken } : {}),
                 },
                 body: JSON.stringify(patientData),
                 credentials: 'include',
