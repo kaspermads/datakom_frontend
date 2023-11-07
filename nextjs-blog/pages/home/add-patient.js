@@ -25,7 +25,6 @@ const AddPatient = () => {
     const [csrfToken, setCsrfToken] = useState('');
 
     useEffect(() => {
-        //fetch('http://localhost:8000/api/register-patient/', {
         fetch('https://www.kaspergaupmadsen.no/api/register-patient/', {
             credentials: 'include'
         }).then(() => {
@@ -41,8 +40,8 @@ const AddPatient = () => {
 
         // Perform the API call
         try {
-            //const response = await fetch('https://www.kaspergaupmadsen.no/api/register-patient/', {
-            const response = await fetch('http://localhost:8000/api/register-patient/', {
+            const response = await fetch('https://www.kaspergaupmadsen.no/api/register-patient/', {
+            //const response = await fetch('http://localhost:8000/api/register-patient/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
