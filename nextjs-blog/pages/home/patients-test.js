@@ -53,7 +53,7 @@ const Patients = () => {
             {patients.map((patient) => (
               <tr key={patient.id}>
                 <td>
-                  <Link href={`/home/patients/${patient.id}`}>
+                  <Link href={`/home/${patient.id}`}>
                     <a>{patient.id}</a>
                   </Link>
                 </td>
@@ -66,7 +66,7 @@ const Patients = () => {
             ))}
         </tbody>
       </table>
-      
+
     </>
     );
 };
