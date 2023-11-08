@@ -1,5 +1,5 @@
 
-import Router from 'next/router';
+import { useRouter } from 'next/router';
 import React, { useState, useEffect, useContext } from 'react';
 import Patients from './patients-test';
 import AddPatient from './add-patient'; 
@@ -11,9 +11,10 @@ import withAuth from '../../components/withAuthentication'
 
 
 function Dashboard() {
-  
-  const [activePage, setActivePage] = useState('patients');
+  const router = useRouter();
   const { isAuthenticated } = useContext(AuthContext);
+
+  const activePage = router.pathname.includes("add-patient") ? "add-patient" : "patients";
  
   
   const DashboardContent = () => {
@@ -31,11 +32,9 @@ function Dashboard() {
   
     isAuthenticated ? (
  
-      <Layout setActivePage={setActivePage}>
         <main>
           {DashboardContent()}
         </main>
-      </Layout>
     ) :
       <>
         Loading{''}
