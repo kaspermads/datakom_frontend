@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }) => {
             const verifyToken = async () => {
                 try {
                     // Replace '/api/verify' with your API endpoint that checks for authentication
-                    const response = await fetch('https://www.kaspergaupmadsen.no/api/token/verify/', {
+                    const response = await fetch('https://api.kaspergaupmadsen.no/api/token/verify/', {
                     //const response = await fetch('http://localhost:8000/api/token/verify/', {
                         method: 'POST',
                         credentials: 'include' // Needed to include the HttpOnly cookie in the request
@@ -53,7 +53,7 @@ export const AuthProvider = ({ children }) => {
 
     const logout = async () => {
         try {
-            const response = await fetch('https://www.kaspergaupmadsen.no/api/logout/', {
+            const response = await fetch('https://api.kaspergaupmadsen.no/api/logout/', {
             //const response = await fetch('http://localhost:8000/api/logout/', {
                 method: 'POST',
                 credentials: 'include'

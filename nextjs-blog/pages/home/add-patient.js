@@ -25,29 +25,33 @@ const AddPatient = () => {
     const [csrfToken, setCsrfToken] = useState('');
 
     useEffect(() => {
-        fetch('https://www.kaspergaupmadsen.no/api/register-patient/', {
-            credentials: 'include'
-        }).then(() => {
-            setCsrfToken(getCSRFToken());
-        });
-    }, []); 
+        const token = getCSRFToken();
+        if (token !== csrfToken) {
+            setCsrfToken(token);
+            }
+        }, []); 
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         const formattedBirthDate = birthDate.split('/').reverse().join('-');
         
-        const patientData = {first_name: firstName, last_name: lastName, birthDate: formattedBirthDate, address: address, phone_number: phoneNumber};
+        const patientData = {
+            first_name: firstName,
+            last_name: lastName,
+            birthDate: formattedBirthDate,
+            address: address,
+            phone_number: phoneNumber};
 
         // Perform the API call
         try {
-            const response = await fetch('https://www.kaspergaupmadsen.no/api/register-patient/', {
+            const response = await fetch('https://api.kaspergaupmadsen.no/api/register-patient/', {
             //const response = await fetch('http://localhost:8000/api/register-patient/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'X-CSRFToken': getCSRFToken()
+                    ...(csrfToken ? { 'X-CSRFToken': csrfToken } : {}),
                 },
-                body: JSON.stringify({ patientData }),
+                body: JSON.stringify(patientData),
                 credentials: 'include',
             });
 
