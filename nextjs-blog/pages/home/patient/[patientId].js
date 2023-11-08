@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import Layout from '../../components/navbar';
-import withAuth from '../../components/withAuthentication';
+import Layout from '../../../components/navbar';
+import withAuth from '../../../components/withAuthentication';
 
 const PatientDetail = () => {
   const [patient, setPatient] = useState(null);
