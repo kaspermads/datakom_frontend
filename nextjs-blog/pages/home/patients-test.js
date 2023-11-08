@@ -35,16 +35,38 @@ const Patients = () => {
 
   return (
       <>
+      
           
-        <h5>Patients List</h5>
-        <ul>
-            {patients.map((patient, index) => (
-            <li key={index}>
-                {patient.first_name} {patient.last_name} - Birthdate:{" "}
-                {patient.birthDate} - {patient.address} - {patient.phone} - {patient.added_by}
-            </li>
+      <h5>Patients List</h5>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Date of Birth</th>
+            <th>Added by</th>
+          </tr>
+        </thead>
+        <tbody>
+            {patients.map((patient) => (
+              <tr key={patient.id}>
+                <td>
+                  <Link href={`/home/patients/${patient.id}`}>
+                    <a>{patient.id}</a>
+                  </Link>
+                </td>
+                <td>{patient.first_name}</td>
+                <td>{patient.last_name}</td>
+                <td>{patient.birthDate}</td>
+                <td>{patient.added_by}</td>
+              </tr>
+
             ))}
-          </ul>
+        </tbody>
+      </table>
+      
     </>
     );
 };
