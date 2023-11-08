@@ -36,9 +36,7 @@ const PatientDetail = () => {
 
   return (
     <Layout>
-      <div className="tableStyle">
-      <h5>Patient Data</h5>
-      <table>
+      <table class = "table table-striped">
               <tbody>
                   <tr>
                       <th>ID</th>
@@ -72,7 +70,6 @@ const PatientDetail = () => {
                   </tr>
               </tbody>
       </table>
-    </div>
     </Layout>
 
     )

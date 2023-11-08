@@ -34,12 +34,8 @@ const Patients = () => {
   }
 
   return (
-      <div className = {styles.tables}>
-      
-          
-      <h5>Patients List</h5>
-      
-      <table>
+      <>      
+      <table class = "table table-striped">
         <thead>
           <tr>
             <th>ID</th>
@@ -65,7 +61,7 @@ const Patients = () => {
         </tbody>
       </table>
 
-    </div>
+    </>
     );
 };
 
