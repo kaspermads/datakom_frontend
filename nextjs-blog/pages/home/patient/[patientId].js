@@ -34,13 +34,14 @@ const PatientDetail = () => {
 
   return (
     <>
-         
+         <Layout>
       <h5>Patient Data</h5>
       <table>
               <tbody>
                   <tr>
                       <th>ID</th>
                       <td>{patient.id}</td>
+                      
                   </tr>
                   <tr>
                       <th>First Name</th>
@@ -52,7 +53,8 @@ const PatientDetail = () => {
                   </tr>
                   <tr>
                       <th>Address</th>
-                      <td>{patient.adress}</td>
+                      <td>{patient.address}</td>
+                      {console.log(patient.address)}
                   </tr>
                   <tr>
                       <th>Phone Number</th>
@@ -60,7 +62,7 @@ const PatientDetail = () => {
                   </tr>
                   <tr>
                       <th>Date of Birth</th>
-                      <td>{patient.date_of_birth}</td>
+                      <td>{patient.birthDate}</td>
                   </tr>
                   <tr>
                       <th>Added by</th>
@@ -69,7 +71,8 @@ const PatientDetail = () => {
               </tbody>
       </table>
 
-    
+       </Layout>
+
     </>
     );
 };
