@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Layout from '../../../components/navbar';
 import withAuth from '../../../components/withAuthentication';
+import styles from '../../styles/Home.module.css';
+
 
 const PatientDetail = () => {
   const [patient, setPatient] = useState(null);
@@ -33,10 +35,10 @@ const PatientDetail = () => {
   }
 
   return (
-    <>
+    <div className = {styles.container}>
          <Layout>
       <h5>Patient Data</h5>
-      <table>
+      <table className={styles.card}>
               <tbody>
                   <tr>
                       <th>ID</th>
@@ -73,7 +75,7 @@ const PatientDetail = () => {
 
        </Layout>
 
-    </>
+    </div>
     )
 };
 

@@ -14,13 +14,7 @@ function Dashboard() {
   
   const [activePage, setActivePage] = useState('patients');
   const { isAuthenticated } = useContext(AuthContext);
-  const dashboardStyle = {
-    display: 'flex',         // Use the Flexbox layout
-    justifyContent: 'center', // Center horizontally
-    alignItems: 'center',     // Center vertically
-    height: '100vh',          // Full viewport height
-    textAlign: 'center'       // Center text for any direct child
-  };
+ 
   
   const DashboardContent = () => {
     switch (activePage) {
@@ -38,7 +32,7 @@ function Dashboard() {
     isAuthenticated ? (
  
       <Layout setActivePage={setActivePage}>
-        <main style = {dashboardStyle}>
+        <main>
           {DashboardContent()}
         </main>
       </Layout>
