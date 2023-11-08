@@ -46,21 +46,19 @@ const Patients = () => {
             <th>First Name</th>
             <th>Last Name</th>
             <th>Date of Birth</th>
-            <th>Added by</th>
           </tr>
         </thead>
         <tbody>
             {patients.map((patient) => (
               <tr key={patient.id}>
                 <td>
-                  <Link href={`/home/${patient.id}`}>
+                  <Link href={`/home/patient/${patient.id}`}>
                     <a>{patient.id}</a>
                   </Link>
                 </td>
                 <td>{patient.first_name}</td>
                 <td>{patient.last_name}</td>
                 <td>{patient.birthDate}</td>
-                <td>{patient.added_by}</td>
               </tr>
 
             ))}
