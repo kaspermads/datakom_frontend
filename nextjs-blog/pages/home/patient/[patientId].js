@@ -35,10 +35,10 @@ const PatientDetail = () => {
   }
 
   return (
-    <div className = {styles.container}>
-         <Layout>
+    <Layout>
+      <div className="tableStyle">
       <h5>Patient Data</h5>
-      <table className={styles.card}>
+      <table>
               <tbody>
                   <tr>
                       <th>ID</th>
@@ -72,10 +72,9 @@ const PatientDetail = () => {
                   </tr>
               </tbody>
       </table>
-
-       </Layout>
-
     </div>
+    </Layout>
+
     )
 };
 

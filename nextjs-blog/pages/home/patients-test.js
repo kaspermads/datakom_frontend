@@ -34,7 +34,7 @@ const Patients = () => {
   }
 
   return (
-      <>
+      <div className = {styles.tables}>
       
           
       <h5>Patients List</h5>
@@ -65,7 +65,7 @@ const Patients = () => {
         </tbody>
       </table>
 
-    </>
+    </div>
     );
 };
 

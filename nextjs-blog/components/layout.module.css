@@ -14,3 +14,9 @@
   margin: 3rem 0 0;
 }
 
+.tables {
+  display: flex;
+  justify-content: center ;
+  align-items: center;
+  border : 1px solid #eaeaea;
+}
