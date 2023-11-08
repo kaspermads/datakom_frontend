@@ -74,7 +74,7 @@ const PatientDetail = () => {
        </Layout>
 
     </>
-    );
+    )
 };
 
 export default withAuth(PatientDetail);
