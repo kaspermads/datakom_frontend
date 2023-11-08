@@ -35,7 +35,7 @@ const Patients = () => {
 
   return (
       <>      
-      <table class = "table table-striped">
+      <table class = "table table-hover table-striped">
         <thead>
           <tr>
             <th scope="col">ID</th>

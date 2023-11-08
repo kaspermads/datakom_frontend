@@ -54,7 +54,6 @@ const PatientDetail = () => {
                   <tr>
                       <th>Address</th>
                       <td>{patient.address}</td>
-                      {console.log(patient.address)}
                   </tr>
                   <tr>
                       <th>Phone Number</th>
