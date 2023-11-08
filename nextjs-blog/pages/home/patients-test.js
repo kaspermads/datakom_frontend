@@ -41,7 +41,7 @@ const Patients = () => {
             {patients.map((patient, index) => (
             <li key={index}>
                 {patient.first_name} {patient.last_name} - Birthdate:{" "}
-                {patient.birthDate}
+                {patient.birthDate} - {patient.address} - {patient.phone} - {patient.added_by}
             </li>
             ))}
           </ul>

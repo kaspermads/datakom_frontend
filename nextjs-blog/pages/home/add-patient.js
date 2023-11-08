@@ -40,7 +40,7 @@ const AddPatient = () => {
             last_name: lastName,
             birthDate: formattedBirthDate,
             address: address,
-            phone_number: phoneNumber};
+            phone: phoneNumber};
 
         // Perform the API call
         try {
