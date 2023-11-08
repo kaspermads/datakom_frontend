@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Router from 'next/router';
 import { AuthContext } from './AuthContext';
 import { useContext } from 'react';
+import Link from 'next/link';
 
 
 
@@ -28,24 +29,16 @@ export default function Layout({ children }) {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul className="navbar-nav justify-content-center nav-underline ">
-            <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#" onClick={(e) => {
-                  e.preventDefault();
-                  Router.push('/home/patients-test');
-                  
-                }}>
-                Patients
-                </a>
+          <ul className="nav justify-content-center nav-underline ">
+              <li className="nav-item">
+                <Link href = "/home/patients-test">
+                  <a className="nav-link active" aria-current="page" href="#">Patients</a>
+                </Link>
             </li>
-            <li className="nav-item">
-                <a className="nav-link" href="#" onClick={(e) => {
-                  e.preventDefault();
-                  Router.push('/home/add-patient');
-                  
-                
-                }}>Add Patient
-                </a>
+              <li className="nav-item">
+                <Link href = "/home/add-patient">
+                  <a className="nav-link" href="#">Add Patient</a>
+                </Link>
             </li>
            
              
