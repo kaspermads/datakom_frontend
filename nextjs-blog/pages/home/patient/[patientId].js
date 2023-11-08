@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Layout from '../../../components/navbar';
 import withAuth from '../../../components/withAuthentication';
-import styles from '../../styles/Home.module.css';
+import styles from '../../../styles/Home.module.css';
 
 
 const PatientDetail = () => {
