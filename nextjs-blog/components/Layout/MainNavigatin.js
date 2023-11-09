@@ -5,13 +5,13 @@ import { AuthContext } from "../AuthContext";
 import classes from "../../styles/MainNavigation.module.css";
 
 
-function MainNavigation(children, showNav = true) {
+export default function MainNavigation({children, showNav = true}) {
     const { isAuthenticated, logout } = useContext(AuthContext);
 
     const logoutHandler = async (e) => {
         e.preventDefault();
         logout();
-    }
+    };
 
     return (
 
@@ -45,5 +45,3 @@ function MainNavigation(children, showNav = true) {
         </>
     );
 }
-
-export default MainNavigation;
