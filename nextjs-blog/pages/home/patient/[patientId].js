@@ -44,7 +44,7 @@ const PatientDetail = () => {
       <table className="table custom-table table-striped table-hover w-auto">
         <tbody>
           <tr>
-            <th>ID</th>
+            <th id="overskrift">ID</th>
             <td>{patient.id}</td>
                       
           </tr>
