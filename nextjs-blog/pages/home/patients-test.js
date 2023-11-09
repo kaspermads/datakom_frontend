@@ -34,6 +34,10 @@ const Patients = () => {
     return <div>Loading...</div>;
   }
 
+  const handleRowClick = (patientId) => {
+    Router.push(`/home/patient/${patientId}`);
+  };
+
   return (
       <>      
       <table class = "table table-hover table-striped">
@@ -47,14 +51,10 @@ const Patients = () => {
         </thead>
         <tbody>
             {patients.map((patient) => (
-              <tr key={patient.id}>
-                <th scope = "row">
-                  <Link href={`/home/patient/${patient.id}`}>
-                    <a>{patient.id}</a>
-                  </Link>
-                </th>
+              <tr key={patient.id} onClick = {() => handleRowClick(patient.id)}>
+                <th scope = "row">{patient.id}</th>
                 <td>{patient.first_name}</td>
-                <td>{patient.last_name}</td>
+                <td>{patient.last_name}</td>  
                 <td>{patient.birthDate}</td>
               </tr>
 
