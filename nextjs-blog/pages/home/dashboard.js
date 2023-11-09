@@ -7,6 +7,8 @@ import Layout from '../../components/navbar';
 import { AuthContext } from '../../components/AuthContext';
 import withAuth from '../../components/withAuthentication'
 
+import MainNavigation from '../../components/Layout/MainNavigatin';
+
 
 
 
@@ -30,18 +32,16 @@ function Dashboard() {
   
     isAuthenticated ? (
  
-      <Layout setActivePage={setActivePage}>
+      <MainNavigation setActivePage={setActivePage}>
         <main>
           {DashboardContent()}
         </main>
-      </Layout>
+      </MainNavigation>
     ) :
       <>
         Loading{''}
       </>
 
-
-    
   );
   
 }
