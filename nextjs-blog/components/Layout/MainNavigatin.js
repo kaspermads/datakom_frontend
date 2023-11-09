@@ -5,10 +5,11 @@ import { AuthContext } from "../AuthContext";
 import classes from "../../styles/MainNavigation.module.css";
 
 
-function MainNavigation() {
-    const { logout } = useContext(AuthContext);
+function MainNavigation(children, showNav = true) {
+    const { isAuthenticated, logout } = useContext(AuthContext);
 
-    function logoutHandler() {
+    const logoutHandler = async (e) => {
+        e.preventDefault();
         logout();
     }
 
@@ -30,13 +31,16 @@ function MainNavigation() {
                             <a>Add New Patient</a>
                         </Link>
                     </li>
+                    {isAuthenticated && (
                     <li className={classes.actions}>
                         <button onClick={logoutHandler}>Logout</button>
                     </li>
+                    )}
                 </ul>
             </nav>
         </header>
         )}
+        <main>{children}</main>
 
         </>
     );
