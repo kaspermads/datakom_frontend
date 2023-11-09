@@ -40,7 +40,7 @@ const PatientDetail = () => {
   return (
     <>
       <h1>Patient Details</h1>
-      <table className="table table-striped custom-table">
+      <table className="table-striped custom-table">
         <tbody>
           <tr>
             <th>ID</th>
