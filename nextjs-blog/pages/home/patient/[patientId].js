@@ -76,7 +76,7 @@ const PatientDetail = () => {
 
       <h2>Blood Pressure Data for {patient.first_name}</h2>
       {patient.patient_blood_pressure_data && patient.patient_blood_pressure_data.length > 0 ? (
-        <table className="table table-sm table-striped custom-table">
+        <table className="table table-striped custom-table table-sm">
           <thead>
             <tr>
               <th>Date</th>
