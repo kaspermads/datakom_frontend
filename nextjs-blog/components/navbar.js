@@ -32,19 +32,19 @@ export default function Layout({ children, showNavbar = true }) {
               <ul className="nav justify-content-center nav-underline ">
                 <li className="nav-item">
                   <Link href="/home/patients-test">
-                    <a className="nav-link active" aria-current="page" href="#">Patients</a>
+                    <a className="nav-link" aria-current="page">Patients</a>
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link href="/home/add-patient">
-                    <a className="nav-link" href="#">Add Patient</a>
+                    <a className="nav-link">Add Patient</a>
                   </Link>
                 </li>
            
              
                 {isAuthenticated && (
                   <li className="nav-item">
-                    <a className="nav-link" href="#" onClick={handleLogout} >Logout</a>
+                    <a className="nav-link" onClick={handleLogout} >Logout</a>
                   </li>
                 )}
               </ul>
