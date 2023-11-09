@@ -2,7 +2,7 @@ import { useContext } from "react";
 import Link from "next/link";
 import { AuthContext } from "../AuthContext";
 
-import classes from "../styles/MainNavigation.module.css";
+import classes from "../../styles/MainNavigation.module.css";
 
 
 function MainNavigation() {
