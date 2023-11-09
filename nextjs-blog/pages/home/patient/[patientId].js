@@ -36,7 +36,7 @@ const PatientDetail = () => {
 
   const data = {
     labels: [
-      januar, februar, mars, april, mai, juni, juli, august, september, oktober, november, desember
+      "januar", "februar", "mars", "april", "mai", "juni", "juli", "august", "september", "oktober", "november", "desember",
     ],
     datasets: [
       {
