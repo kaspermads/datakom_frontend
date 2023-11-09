@@ -27,9 +27,9 @@ const PatientDetail = () => {
           console.error("Error fetching patient data:", error);
           setLoading(false);
         });
-        return () => {
-          isMounted.current = false;
-        };
+      return () => {
+        isMounted.current = false;
+      };
     }
   }, [patientId]);
 
@@ -41,20 +41,8 @@ const PatientDetail = () => {
     return <div>No patient data found.</div>;
   }
 
-  const patinetData = {
-    labels: [
-      "januar",
-      "februar",
-      "mars",
-      "april",
-      "mai",
-      "juni",
-      "juli",
-      "august",
-      "september",
-      "oktober",
-      "november",
-      "desember",
+  const patientData = {
+    labels: ["januar", "februar","mars","april","mai","juni","juli","august","september","oktober","november","desember",
     ],
     datasets: [
       {
@@ -76,8 +64,8 @@ const PatientDetail = () => {
 
   return (
     <>
-      {patient === null ? (
-        <div>No patient data found.</div>
+      {true ? (
+        <div><Line patientData={patientData} /></div>
       ) : (
         <>
           <table class="table table-striped">
@@ -112,7 +100,7 @@ const PatientDetail = () => {
               </tr>
             </tbody>
           </table>
-          <Line patinetData={patinetData} />
+          
         </>
       )}
     </>
