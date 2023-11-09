@@ -30,19 +30,19 @@ const PatientDetail = () => {
         });
       
       //Fetch blood pressure data
-      fetch(`https://api.kaspergaupmadsen.no/patient/${patientId}/bloodpressure/`), {
-        method: "GET",
-        credentials: "include",
-      }
-        .then((response) => response.json())
-        .then((data) => {
-          setBloodPressureData(data);
-          setLoading(false);
-        })
-        .catch((error) => {
-          console.error("Error fetching blood pressure data:", error);
-          setLoading(false);
-        });
+      //fetch(`https://api.kaspergaupmadsen.no/patient/${patientId}/bloodpressure/`), {
+     //   method: "GET",
+    //    credentials: "include",
+   //   }
+   //     .then((response) => response.json())
+    //    .then((data) => {
+     //     setBloodPressureData(data);
+     //     setLoading(false);
+     //   })
+    //    .catch((error) => {
+     /////     console.error("Error fetching blood pressure data:", error);
+     //     setLoading(false);
+    //    });
     }
   }, [patientId]);
 
@@ -92,31 +92,7 @@ const PatientDetail = () => {
       </table>
 
 
-      <h2>Blood Pressure Data</h2>
-      {bloodPressureData.length > 0 ? (
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Time</th>
-            <th>Systolic</th>
-            <th>Diastolic</th>
-            <th>Pulse</th>
-          </tr>
-        </thead>
-        <tbody>
-          {bloodPressureData.map((record) => (
-            <tr key={record.id}>
-              <td>{record.time}</td>
-              <td>{record.systolic}</td>
-              <td>{record.diastolic}</td>
-              <td>{record.pulse}</td>
-            </tr>
-          ))}
-        </tbody>
-        </table>
-      ) : (
-          <div>No blood pressure data found.</div>
-      )}
+   
       
 
     
