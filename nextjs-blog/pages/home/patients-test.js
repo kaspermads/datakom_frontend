@@ -10,6 +10,7 @@ import withAuth from '../../components/withAuthentication'
 const Patients = () => {
   const [patients, setPatients] = useState([]);
   const [loading, setLoading] = useState('');
+  
 
   useEffect(() => {
     fetch("https://api.kaspergaupmadsen.no/Patients/")
@@ -34,28 +35,24 @@ const Patients = () => {
   }
 
   return (
-      <>
-      
-          
-      <h5>Patients List</h5>
-      
-      <table>
+      <>      
+      <table class = "table table-hover table-striped">
         <thead>
           <tr>
-            <th>ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Date of Birth</th>
+            <th scope="col">ID</th>
+            <th scope = "col">First Name</th>
+            <th scope = "col">Last Name</th>
+            <th scope = "col">Date of Birth</th>
           </tr>
         </thead>
         <tbody>
             {patients.map((patient) => (
               <tr key={patient.id}>
-                <td>
+                <th scope = "row">
                   <Link href={`/home/patient/${patient.id}`}>
                     <a>{patient.id}</a>
                   </Link>
-                </td>
+                </th>
                 <td>{patient.first_name}</td>
                 <td>{patient.last_name}</td>
                 <td>{patient.birthDate}</td>

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Layout from '../../../components/navbar';
 import withAuth from '../../../components/withAuthentication';
+import styles from '../../../components/layout.module.css';
+
 
 const PatientDetail = () => {
   const [patient, setPatient] = useState(null);
@@ -33,10 +35,8 @@ const PatientDetail = () => {
   }
 
   return (
-    <>
-         <Layout>
-      <h5>Patient Data</h5>
-      <table>
+    
+      <table class = "table table-striped">
               <tbody>
                   <tr>
                       <th>ID</th>
@@ -54,7 +54,6 @@ const PatientDetail = () => {
                   <tr>
                       <th>Address</th>
                       <td>{patient.address}</td>
-                      {console.log(patient.address)}
                   </tr>
                   <tr>
                       <th>Phone Number</th>
@@ -70,11 +69,9 @@ const PatientDetail = () => {
                   </tr>
               </tbody>
       </table>
+    
 
-       </Layout>
-
-    </>
-    );
+    )
 };
 
 export default withAuth(PatientDetail);
