@@ -48,7 +48,7 @@ const Patients = () => {
             <th>ID</th>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Date of Birth</th>
+            <th>Date of Birthhaha</th>
             <th>Added by</th>
           </tr>
         </thead>
