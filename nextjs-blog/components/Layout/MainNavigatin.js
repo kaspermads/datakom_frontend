@@ -27,7 +27,7 @@ export default function MainNavigation({children, showNav = true}) {
                         </Link>
                     </li>
                     <li>
-                        <Link href="/home/add_patient">
+                        <Link href="/home/add-patient">
                             <a>Add New Patient</a>
                         </Link>
                     </li>
