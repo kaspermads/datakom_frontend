@@ -11,10 +11,7 @@ const Patients = () => {
   const [patients, setPatients] = useState([]);
   const [loading, setLoading] = useState('');
 
-  const router = useRouter();
-  const handleRowClick = (patientId) => {
-    router.push(`/home/patient/${patientId}`);
-  };
+  
 
   useEffect(() => {
     fetch("https://api.kaspergaupmadsen.no/Patients/")
@@ -71,8 +68,3 @@ const Patients = () => {
 };
 
 export default withAuth(Patients);
-
-
-<Link href={`/home/patient/${patient.id}`}>
-                    <a>{patient.id}</a>
-                  </Link>
