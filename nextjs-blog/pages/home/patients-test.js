@@ -32,6 +32,9 @@ const Patients = () => {
   if (loading) {
     return <div>Loading...</div>;
   }
+  const handleRowClick = (patientId) => {
+    Router.push(`/home/patient/${patientId}`);
+  };
 
   return (
       <>
@@ -45,22 +48,16 @@ const Patients = () => {
             <th>ID</th>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Date of Birth</th>
+            <th>Date of Birthhaha</th>
             <th>Added by</th>
           </tr>
         </thead>
         <tbody>
             {patients.map((patient) => (
-              <tr key={patient.id}>
-                <td>
-                  <Link href={`/home/patients/${patient.id}`}>
-                    <a>{patient.id}</a>
-                  </Link>
-                </td>
+              <tr key={patient.id} onClick = {() => handleRowClick(patient.id)}>
                 <td>{patient.first_name}</td>
                 <td>{patient.last_name}</td>
                 <td>{patient.birthDate}</td>
-                <td>{patient.added_by}</td>
               </tr>
 
             ))}
