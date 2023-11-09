@@ -10,11 +10,7 @@ import withAuth from '../../components/withAuthentication'
 const Patients = () => {
   const [patients, setPatients] = useState([]);
   const [loading, setLoading] = useState('');
-
-  const router = useRouter();
-  const handleRowClick = (patientId) => {
-    router.push(`/home/patient/${patientId}`);
-  };
+  
 
   useEffect(() => {
     fetch("https://api.kaspergaupmadsen.no/Patients/")
