@@ -10,19 +10,26 @@ const PatientDetail = () => {
   const [loading, setLoading] = useState(true);
   const router = useRouter();
   const { patientId } = router.query;
+  const isMounted = useRef(false);
 
   useEffect(() => {
+    isMounted.current = true;
     if (patientId) {
       fetch(`https://api.kaspergaupmadsen.no/Patients/${patientId}`)
         .then((response) => response.json())
         .then((data) => {
-          setPatient(data);
-          setLoading(false);
+          if (isMounted.current) {
+            setPatient(data);
+            setLoading(false);
+          }
         })
         .catch((error) => {
           console.error("Error fetching patient data:", error);
           setLoading(false);
         });
+        return () => {
+          isMounted.current = false;
+        };
     }
   }, [patientId]);
 
