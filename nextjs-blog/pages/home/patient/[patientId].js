@@ -112,7 +112,7 @@ const PatientDetail = () => {
               </tr>
             </tbody>
           </table>
-          <Line patinetData={patinetData} />
+          
         </>
       )}
     </>
