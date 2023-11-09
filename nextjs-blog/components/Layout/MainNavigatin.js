@@ -13,6 +13,9 @@ function MainNavigation() {
     }
 
     return (
+
+        <>
+        {showNav && (
         <header className={classes.header}>
             <div className={classes.logo}>Gruppe 4 Helsetjeneste</div>
             <nav>
@@ -33,6 +36,9 @@ function MainNavigation() {
                 </ul>
             </nav>
         </header>
+        )}
+
+        </>
     );
 }
 
