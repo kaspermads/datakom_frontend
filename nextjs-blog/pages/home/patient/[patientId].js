@@ -7,7 +7,7 @@ import styles from '../../../components/layout.module.css';
 
 const PatientDetail = () => {
   const [patient, setPatient] = useState(null);
-  const {bloodPressureData, setBloodPressureData} = useState([]);
+  //const {bloodPressureData, setBloodPressureData} = useState([]);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
   const { patientId } = router.query;
