@@ -39,7 +39,7 @@ const PatientDetail = () => {
 
   return (
     <>
-      <h1>Patient Details</h1>
+      <h3>Patient Details</h3>
       <table className="table custom-table table-striped table-hover">
         <tbody>
           <tr>
@@ -74,7 +74,7 @@ const PatientDetail = () => {
         </tbody>
       </table>
 
-      <h2>Blood Pressure Data for {patient.first_name}</h2>
+      <h3>Blood Pressure Data for {patient.first_name}</h3>
       {patient.patient_blood_pressure_data && patient.patient_blood_pressure_data.length > 0 ? (
         <table className="table custom-table table-striped table-sm">
           <thead>
