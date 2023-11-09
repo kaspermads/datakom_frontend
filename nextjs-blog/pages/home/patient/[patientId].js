@@ -7,12 +7,14 @@ import styles from '../../../components/layout.module.css';
 
 const PatientDetail = () => {
   const [patient, setPatient] = useState(null);
+  const {bloodPressureData, setBloodPressureData} = useState([]);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
   const { patientId } = router.query;
 
   useEffect(() => {
     if (patientId) {
+      //Fetch patient data
       fetch(`https://api.kaspergaupmadsen.no/Patients/${patientId}`)
         .then((response) => response.json())
         .then((data) => {
@@ -21,6 +23,18 @@ const PatientDetail = () => {
         })
         .catch((error) => {
           console.error("Error fetching patient data:", error);
+          setLoading(false);
+        });
+      
+      //Fetch blood pressure data
+      fetch(`https://api.kaspergaupmadsen.no/patient/${patientId}/bloodpressure/`)
+        .then((response) => response.json())
+        .then((data) => {
+          setBloodPressureData(data);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.error("Error fetching blood pressure data:", error);
           setLoading(false);
         });
     }
@@ -35,7 +49,8 @@ const PatientDetail = () => {
   }
 
   return (
-    
+    <>
+      <h1>Patient Details</h1>
       <table class = "table table-striped">
               <tbody>
                   <tr>
@@ -69,8 +84,37 @@ const PatientDetail = () => {
                   </tr>
               </tbody>
       </table>
-    
 
+
+      <h2>Blood Pressure Data</h2>
+      {bloodPressureData.length > 0 ? (
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Systolic</th>
+            <th>Diastolic</th>
+            <th>Pulse</th>
+          </tr>
+        </thead>
+        <tbody>
+          {bloodPressureData.map((record) => (
+            <tr key={record.id}>
+              <td>{record.time}</td>
+              <td>{record.systolic}</td>
+              <td>{record.diastolic}</td>
+              <td>{record.pulse}</td>
+            </tr>
+          ))}
+        </tbody>
+        </table>
+      ) : (
+          <div>No blood pressure data found.</div>
+      )}
+      
+
+    
+</>
     )
 };
 

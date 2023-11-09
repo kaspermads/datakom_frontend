@@ -39,7 +39,6 @@ const Patients = () => {
   return (
       <>
       
-          
       <h5>Patients List</h5>
       
       <table>
@@ -48,13 +47,13 @@ const Patients = () => {
             <th>ID</th>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Date of Birthhaha</th>
-            <th>Added by</th>
+            <th>Date of Birth</th>
           </tr>
         </thead>
         <tbody>
             {patients.map((patient) => (
-              <tr key={patient.id} onClick = {() => handleRowClick(patient.id)}>
+              <tr key={patient.id} onClick={() => handleRowClick(patient.id)}>
+                <td>{patient.id}</td>
                 <td>{patient.first_name}</td>
                 <td>{patient.last_name}</td>
                 <td>{patient.birthDate}</td>
