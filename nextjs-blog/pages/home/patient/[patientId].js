@@ -26,21 +26,6 @@ const PatientDetail = () => {
           console.error("Error fetching patient data:", error);
           setLoading(false);
         });
-      
-      //Fetch blood pressure data
-      //fetch(`https://api.kaspergaupmadsen.no/patient/${patientId}/bloodpressure/`), {
-     //   method: "GET",
-    //    credentials: "include",
-   //   }
-   //     .then((response) => response.json())
-    //    .then((data) => {
-     //     setBloodPressureData(data);
-     //     setLoading(false);
-     //   })
-    //    .catch((error) => {
-     /////     console.error("Error fetching blood pressure data:", error);
-     //     setLoading(false);
-    //    });
     }
   }, [patientId]);
 
@@ -55,47 +40,70 @@ const PatientDetail = () => {
   return (
     <>
       <h1>Patient Details</h1>
-      <table class = "table table-striped">
-              <tbody>
-                  <tr>
-                      <th>ID</th>
-                      <td>{patient.id}</td>
+      <table className="table table-striped">
+        <tbody>
+          <tr>
+            <th>ID</th>
+            <td>{patient.id}</td>
                       
-                  </tr>
-                  <tr>
-                      <th>First Name</th>
-                      <td>{patient.first_name}</td>
-                    </tr>
-                  <tr>
-                      <th>Last Name</th>
-                      <td>{patient.last_name}</td>
-                  </tr>
-                  <tr>
-                      <th>Address</th>
-                      <td>{patient.address}</td>
-                  </tr>
-                  <tr>
-                      <th>Phone Number</th>
-                      <td>{patient.phone}</td>
-                  </tr>
-                  <tr>
-                      <th>Date of Birth</th>
-                      <td>{patient.birthDate}</td>
-                  </tr>
-                  <tr>
-                      <th>Added by</th>
-                      <td>{patient.added_by}</td>
-                  </tr>
-              </tbody>
+          </tr>
+          <tr>
+            <th>First Name</th>
+            <td>{patient.first_name}</td>
+          </tr>
+          <tr>
+            <th>Last Name</th>
+            <td>{patient.last_name}</td>
+          </tr>
+          <tr>
+            <th>Address</th>
+            <td>{patient.address}</td>
+          </tr>
+          <tr>
+            <th>Phone Number</th>
+            <td>{patient.phone}</td>
+          </tr>
+          <tr>
+            <th>Date of Birth</th>
+            <td>{patient.birthDate}</td>
+          </tr>
+          <tr>
+            <th>Added by</th>
+            <td>{patient.added_by}</td>
+          </tr>
+        </tbody>
       </table>
 
-
-   
-      
-
+      <h2>Blood Pressure Data for {patient.first_name}</h2>
+      {patient.patient_blood_pressure_data && patient.patient_blood_pressure_data.length > 0 ? (
+        <table className="table table-striped">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Systolic</th>
+              <th>Diastolic</th>
+              <th>Pulse</th>
+            </tr>
+          </thead>
+          <tbody>
+            {patient.patient_blood_pressure_data.map((record, index) => (
+              <tr key={index}>
+                <td>{record.date}</td>
+                <td>{record.time}</td>
+                <td>{record.systolic}</td>
+                <td>{record.diastolic}</td>
+                <td>{record.pulse}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      ) : (
+        <div>No blood pressure data found.</div>
+      )}
     
-</>
-    )
+    </>
+  );
 };
 
 export default withAuth(PatientDetail);
