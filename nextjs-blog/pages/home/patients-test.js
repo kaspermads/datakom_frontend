@@ -12,10 +12,10 @@ const Patients = () => {
   const [loading, setLoading] = useState('');
 
   useEffect(() => {
-    fetch("https://api.kaspergaupmadsen.no/Patients/"), {
+    fetch("https://api.kaspergaupmadsen.no/Patients/", {
       method: "GET",
       credentials: "include",
-    }
+    })
       
       .then((response) => {
         if (!response.ok) {

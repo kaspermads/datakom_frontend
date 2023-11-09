@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import Layout from '../../../components/navbar';
 import withAuth from '../../../components/withAuthentication';
-import styles from '../../../components/layout.module.css';
 
 
 const PatientDetail = () => {
@@ -15,10 +13,10 @@ const PatientDetail = () => {
   useEffect(() => {
     if (patientId) {
       //Fetch patient data
-      fetch(`https://api.kaspergaupmadsen.no/Patients/${patientId}`), {
+      fetch(`https://api.kaspergaupmadsen.no/Patients/${patientId}`, {
         method: "GET",
         credentials: "include",
-      }
+      })
         .then((response) => response.json())
         .then((data) => {
           setPatient(data);
