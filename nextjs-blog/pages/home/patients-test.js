@@ -43,10 +43,10 @@ const Patients = () => {
       <table class = "table table-hover table-striped">
         <thead>
           <tr>
-            <th scope="col">ID</th>
+            <th scope="col">ID</th>s
             <th scope = "col">First Name</th>
             <th scope = "col">Last Name</th>
-            <th scope = "col">Date of Birth</th>
+            <th scope = "col">Date of Birthd</th>
           </tr>
         </thead>
         <tbody>
