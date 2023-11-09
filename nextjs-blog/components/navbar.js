@@ -29,10 +29,10 @@ export default function Layout({ children, showNavbar = true }) {
               <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarNavDropdown">
-              <ul className="nav justify-content-center nav-underline ">
+              <ul className="nav justify-content-center nav-underline">
                 <li className="nav-item">
                   <Link href="/home/patients-test">
-                    <a className="nav-link" aria-current="page">Patients</a>
+                    <a className="nav-link active" aria-current="page">Patients</a>
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -44,7 +44,7 @@ export default function Layout({ children, showNavbar = true }) {
              
                 {isAuthenticated && (
                   <li className="nav-item">
-                    <a className="nav-link" onClick={handleLogout} >Logout</a>
+                    <a className="nav-link" href="#" onClick={handleLogout}>Logout</a>
                   </li>
                 )}
               </ul>
