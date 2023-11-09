@@ -40,7 +40,7 @@ const PatientDetail = () => {
   return (
     <>
       <h1>Patient Details</h1>
-      <table className="table table-striped">
+      <table className="table table-striped custom-table">
         <tbody>
           <tr>
             <th>ID</th>
@@ -76,11 +76,10 @@ const PatientDetail = () => {
 
       <h2>Blood Pressure Data for {patient.first_name}</h2>
       {patient.patient_blood_pressure_data && patient.patient_blood_pressure_data.length > 0 ? (
-        <table className="table table-striped">
+        <table className="table table-striped custom-table">
           <thead>
             <tr>
               <th>Date</th>
-              <th>Time</th>
               <th>Systolic</th>
               <th>Diastolic</th>
               <th>Pulse</th>
@@ -89,8 +88,7 @@ const PatientDetail = () => {
           <tbody>
             {patient.patient_blood_pressure_data.map((record, index) => (
               <tr key={index}>
-                <td>{record.date}</td>
-                <td>{record.time}</td>
+                <td>{record.timestamp}</td>
                 <td>{record.systolic}</td>
                 <td>{record.diastolic}</td>
                 <td>{record.pulse}</td>

@@ -32,3 +32,16 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+.custom-table {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+
+.custom-table th,
+.custom-table td {
+  text-align: center;
+  padding: 10px;
+}
