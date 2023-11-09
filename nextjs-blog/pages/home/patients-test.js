@@ -11,7 +11,10 @@ const Patients = () => {
   const [patients, setPatients] = useState([]);
   const [loading, setLoading] = useState('');
 
-  
+  const router = useRouter();
+  const handleRowClick = (patientId) => {
+    router.push(`/home/patient/${patientId}`);
+  };
 
   useEffect(() => {
     fetch("https://api.kaspergaupmadsen.no/Patients/")
@@ -47,17 +50,17 @@ const Patients = () => {
           </tr>
         </thead>
         <tbody>
-          {patients.map((patient) => (
-            <Link href={`/home/patient/${patient.id}`}>
-              <a>
+            {patients.map((patient) => (
               <tr key={patient.id}>
-                <th scope="row">{patient.id}</th>
+                <th scope = "row">
+                  <Link href={`/home/patient/${patient.id}`}>
+                    <a>{patient.id}</a>
+                  </Link>
+                </th>
                 <td>{patient.first_name}</td>
                 <td>{patient.last_name}</td>
                 <td>{patient.birthDate}</td>
               </tr>
-              </a>
-              </Link>
 
             ))}
         </tbody>
