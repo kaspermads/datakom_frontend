@@ -15,7 +15,10 @@ const PatientDetail = () => {
   useEffect(() => {
     if (patientId) {
       //Fetch patient data
-      fetch(`https://api.kaspergaupmadsen.no/Patients/${patientId}`)
+      fetch(`https://api.kaspergaupmadsen.no/Patients/${patientId}`), {
+        method: "GET",
+        credentials: "include",
+      }
         .then((response) => response.json())
         .then((data) => {
           setPatient(data);
@@ -27,7 +30,10 @@ const PatientDetail = () => {
         });
       
       //Fetch blood pressure data
-      fetch(`https://api.kaspergaupmadsen.no/patient/${patientId}/bloodpressure/`)
+      fetch(`https://api.kaspergaupmadsen.no/patient/${patientId}/bloodpressure/`), {
+        method: "GET",
+        credentials: "include",
+      }
         .then((response) => response.json())
         .then((data) => {
           setBloodPressureData(data);
