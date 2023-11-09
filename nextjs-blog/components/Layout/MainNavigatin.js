@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import Link from "next/link";
-import { AuthContext } from "../store/auth-context";
+import { AuthContext } from "../AuthContext";
 
 import classes from "../styles/MainNavigation.module.css";
 
