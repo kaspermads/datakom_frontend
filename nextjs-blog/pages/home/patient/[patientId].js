@@ -39,7 +39,7 @@ const PatientDetail = () => {
 
   return (
     <>
-      <div className = "dashboardContainer">
+      <div className = "dashboardContainers">
       <h3>Patient Details</h3>
       <table className="table custom-table table-striped table-hover w-auto">
         <tbody>
@@ -79,7 +79,7 @@ const PatientDetail = () => {
       <div className = "dashboardContainers">
       <h3>Blood Pressure Data for {patient.first_name}</h3>
       {patient.patient_blood_pressure_data && patient.patient_blood_pressure_data.length > 0 ? (
-        <table className="table custom-table table-striped table-sm">
+        <table className="table custom-table table-striped table-sm w-auto">
           <thead>
             <tr>
               <th>Date</th>
