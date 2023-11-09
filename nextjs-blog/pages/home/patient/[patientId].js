@@ -40,7 +40,7 @@ const PatientDetail = () => {
   return (
     <>
       <h1>Patient Details</h1>
-      <table className="table table-striped table-hover custom-table">
+      <table className="table custom-table table-striped table-hover">
         <tbody>
           <tr>
             <th>ID</th>
@@ -76,7 +76,7 @@ const PatientDetail = () => {
 
       <h2>Blood Pressure Data for {patient.first_name}</h2>
       {patient.patient_blood_pressure_data && patient.patient_blood_pressure_data.length > 0 ? (
-        <table className="table table-striped custom-table table-sm">
+        <table className="table custom-table table-striped table-sm">
           <thead>
             <tr>
               <th>Date</th>
