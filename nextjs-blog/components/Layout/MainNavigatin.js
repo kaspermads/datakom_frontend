@@ -9,7 +9,7 @@ function MainNavigation() {
     const { logout } = useContext(AuthContext);
 
     function logoutHandler() {
-        logout("nurse");
+        logout();
     }
 
     return (
@@ -18,12 +18,12 @@ function MainNavigation() {
             <nav>
                 <ul>
                     <li>
-                        <Link href="/patients-test">
+                        <Link href="/home/patients-test">
                             <a>All Patients</a>
                         </Link>
                     </li>
                     <li>
-                        <Link href="/add_patient">
+                        <Link href="/home/add_patient">
                             <a>Add New Patient</a>
                         </Link>
                     </li>
