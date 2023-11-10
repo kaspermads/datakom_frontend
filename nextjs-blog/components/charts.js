@@ -8,7 +8,7 @@ import withAuth from './withAuthentication'
 const BloodPressureChart = ({ patient_blood_pressure_data }) => {
 
     const data = {
-        labels: patient_blood_pressure_data.map((data) => new Date(data.timestamp).toLocalDateString()),
+        labels: patient_blood_pressure_data.map((data) => new Date(data.timestamp).toLocaleDateString()),
         datasets :[
             {
                 label: "Systolic",
