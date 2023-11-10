@@ -41,9 +41,6 @@ const Patients = () => {
     Router.push(`/home/patient/${patientId}`);
   };
 
-  const handleRowClick = (patientId) => {
-    Router.push(`/home/patient/${patientId}`);
-  };
 
   return (
       <>
