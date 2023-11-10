@@ -10,6 +10,7 @@ import withAuth from '../../components/withAuthentication'
 const Patients = () => {
   const [patients, setPatients] = useState([]);
   const [loading, setLoading] = useState('');
+  
 
   useEffect(() => {
     fetch("https://api.kaspergaupmadsen.no/Patients/")
@@ -33,40 +34,34 @@ const Patients = () => {
     return <div>Loading...</div>;
   }
 
+  const handleRowClick = (patientId) => {
+    Router.push(`/home/patient/${patientId}`);
+  };
+
   return (
-      <>
-      
-          
-      <h5>Patients List</h5>
-      
-      <table>
+      <>      
+      <table class = "table table-hover table-striped">
         <thead>
           <tr>
-            <th>ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Date of Birth</th>
-            <th>Added by</th>
+            <th scope="col">ID</th>s
+            <th scope = "col">First Name</th>
+            <th scope = "col">Last Name</th>
+            <th scope = "col">Date of Birthd</th>
           </tr>
         </thead>
         <tbody>
             {patients.map((patient) => (
-              <tr key={patient.id}>
-                <td>
-                  <Link href={`/home/patients/${patient.id}`}>
-                    <a>{patient.id}</a>
-                  </Link>
-                </td>
+              <tr key={patient.id} onClick = {() => handleRowClick(patient.id)}>
+                <th scope = "row">{patient.id}</th>
                 <td>{patient.first_name}</td>
-                <td>{patient.last_name}</td>
+                <td>{patient.last_name}</td>  
                 <td>{patient.birthDate}</td>
-                <td>{patient.added_by}</td>
               </tr>
 
             ))}
         </tbody>
       </table>
-      
+
     </>
     );
 };
