@@ -1,18 +1,21 @@
-import React, { useState, useContext } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../components/AuthContext";
 import Router from "next/router";
-import LayoutLogin from "../../components/layout";
-import { AuthContext } from "../../components/AuthContext";
+import LayoutLogin from "../components/LayoutLogin";
 
+
+// Login funksjonen som brukes for å logge inn på siden.
 const Login = () => {
   const { login } = useContext(AuthContext);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
+  // Håndterer submit av login.
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Perform the API call
+    // Kaller på APIet for å logge inn. (Fra Django).
     try {
       const response = await fetch(
         "https://api.kaspergaupmadsen.no/api/token/",
