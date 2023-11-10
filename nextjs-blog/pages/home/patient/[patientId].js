@@ -18,6 +18,7 @@ const PatientDetail = () => {
         method: "GET",
         credentials: "include",
       })
+
         .then((response) => response.json())
         .then((data) => {
           setPatient(data);

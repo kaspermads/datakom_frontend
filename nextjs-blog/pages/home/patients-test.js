@@ -10,6 +10,7 @@ import withAuth from '../../components/withAuthentication'
 const Patients = () => {
   const [patients, setPatients] = useState([]);
   const [loading, setLoading] = useState('');
+  
 
   useEffect(() => {
     fetch("https://api.kaspergaupmadsen.no/Patients/", {
@@ -40,6 +41,10 @@ const Patients = () => {
     Router.push(`/home/patient/${patientId}`);
   };
 
+  const handleRowClick = (patientId) => {
+    Router.push(`/home/patient/${patientId}`);
+  };
+
   return (
       <>
       
@@ -58,15 +63,16 @@ const Patients = () => {
             {patients.map((patient) => (
               <tr key={patient.id} onClick={() => handleRowClick(patient.id)}>
                 <td>{patient.id}</td>
+
                 <td>{patient.first_name}</td>
-                <td>{patient.last_name}</td>
+                <td>{patient.last_name}</td>  
                 <td>{patient.birthDate}</td>
               </tr>
 
             ))}
         </tbody>
       </table>
-      
+
     </>
     );
 };

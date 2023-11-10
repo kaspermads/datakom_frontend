@@ -12,6 +12,7 @@ function Dashboard() {
   const [activePage, setActivePage] = useState("patients");
   const { isAuthenticated } = useContext(AuthContext);
 
+
   const DashboardContent = () => {
     switch (activePage) {
       case "patients":
@@ -22,6 +23,7 @@ function Dashboard() {
         return <Patients />;
     }
   };
+
 
   return isAuthenticated ? <main>{DashboardContent()}</main> : <>Loading{""}</>;
 }
