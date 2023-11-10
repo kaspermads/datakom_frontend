@@ -1,7 +1,7 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
 import 'chart.js/auto';
-import withAuth from '../../components/withAuthentication'
+import withAuth from './withAuthentication'
 
 
 const bloodPressureChart = ({ patient_blood_pressure_data }) => {
