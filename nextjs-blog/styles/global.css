@@ -75,3 +75,8 @@ img {
   height: 80%;
   margin-top: 20px;
 }
+
+.chartContainer .chart{
+  margin-left: auto;
+  margin-right: auto;
+}
