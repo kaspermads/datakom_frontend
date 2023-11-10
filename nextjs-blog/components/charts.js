@@ -24,6 +24,14 @@ const BloodPressureChart = ({ patient_blood_pressure_data }) => {
                 backgroundColor: "rgba(54, 162, 235, 0.2)",
                 borderColor: "rgba(54, 162, 235, 1)",
             },
+            {
+                label: "Pulse",
+                data: patient_blood_pressure_data.map((data) => data.pulse),
+                fill: false,
+                backgroundColor: "rgba(255, 206, 86, 0.2)",
+                borderColor: "rgba(255, 206, 86, 1)",
+            },
+            
         ],
     };
 
@@ -32,7 +40,14 @@ const BloodPressureChart = ({ patient_blood_pressure_data }) => {
             y: {
                 beginAtZero: true,
             }
-        }
+        },
+        responsive: true,
+        plugins: {
+            title: {
+                display: true,
+                text: "{patient.first_name}'s Blood Pressure Chart",
+            },
+        },
     };
     return <Line data={data} options={options} />;
 };

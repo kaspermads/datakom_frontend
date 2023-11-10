@@ -68,7 +68,10 @@ img {
 }
 
 .chartContainer {
-  width: 50%;
-  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 80%;
   margin-top: 20px;
 }
