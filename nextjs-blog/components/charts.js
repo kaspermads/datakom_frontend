@@ -45,7 +45,7 @@ const BloodPressureChart = ({ patient_blood_pressure_data }) => {
         plugins: {
             title: {
                 display: true,
-                text: "Blood Pressure Chart:",
+                text: "Blood Pressure Chart",
             },
         },
     };
