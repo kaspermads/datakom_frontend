@@ -1,10 +1,15 @@
-import Head from "next/head";
+import Head from 'next/head';
+
+import { AuthContext } from './AuthContext';
+import { useContext } from 'react';
+import Link from 'next/link';
+
 
 import Router from "next/router";
 import { AuthContext } from "./AuthContext";
 import { useContext } from "react";
 
-export default function Layout({ children }) {
+export default function Layout({ children, showNavbar = true }) {
   const { isAuthenticated, logout } = useContext(AuthContext);
 
   const handleLogout = async (e) => {
@@ -75,4 +80,5 @@ export default function Layout({ children }) {
       <main>{children}</main>
     </>
   );
+
 }

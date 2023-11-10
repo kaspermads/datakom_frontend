@@ -3,7 +3,7 @@ import "../styles/global.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import MainNavigation from "../components/Layout/MainNavigatin";
 import { useRouter } from "next/router";
-//hei hallo had
+
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
