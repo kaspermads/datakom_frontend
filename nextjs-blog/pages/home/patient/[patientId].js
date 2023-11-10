@@ -1,19 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import Layout from '../../../components/navbar';
 import withAuth from '../../../components/withAuthentication';
-import styles from '../../../components/layout.module.css';
+import BloodPressureChart from '../../../components/charts';
 
 
 const PatientDetail = () => {
   const [patient, setPatient] = useState(null);
+  //const {bloodPressureData, setBloodPressureData} = useState([]);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
   const { patientId } = router.query;
 
   useEffect(() => {
     if (patientId) {
-      fetch(`https://api.kaspergaupmadsen.no/Patients/${patientId}`)
+      //Fetch patient data
+      fetch(`https://api.kaspergaupmadsen.no/Patients/${patientId}`, {
+        method: "GET",
+        credentials: "include",
+      })
+
         .then((response) => response.json())
         .then((data) => {
           setPatient(data);
@@ -35,44 +40,77 @@ const PatientDetail = () => {
   }
 
   return (
-    
-      <table class = "table table-striped">
-              <tbody>
-                  <tr>
-                      <th>ID</th>
-                      <td>{patient.id}</td>
+    <>
+      <div className = "dashboardContainers">
+      <h3>Patient Details</h3>
+      <table className="table custom-table table-striped table-hover w-auto">
+        <tbody>
+          <tr>
+            <th id="overskrift">ID</th>
+            <td>{patient.id}</td>
                       
-                  </tr>
-                  <tr>
-                      <th>First Name</th>
-                      <td>{patient.first_name}</td>
-                    </tr>
-                  <tr>
-                      <th>Last Name</th>
-                      <td>{patient.last_name}</td>
-                  </tr>
-                  <tr>
-                      <th>Address</th>
-                      <td>{patient.address}</td>
-                  </tr>
-                  <tr>
-                      <th>Phone Number</th>
-                      <td>{patient.phone}</td>
-                  </tr>
-                  <tr>
-                      <th>Date of Birth</th>
-                      <td>{patient.birthDate}</td>
-                  </tr>
-                  <tr>
-                      <th>Added by</th>
-                      <td>{patient.added_by}</td>
-                  </tr>
-              </tbody>
-      </table>
-    
+          </tr>
+          <tr>
+            <th>First Name</th>
+            <td>{patient.first_name}</td>
+          </tr>
+          <tr>
+            <th>Last Name</th>
+            <td>{patient.last_name}</td>
+          </tr>
+          <tr>
+            <th>Address</th>
+            <td>{patient.address}</td>
+          </tr>
+          <tr>
+            <th>Phone Number</th>
+            <td>{patient.phone}</td>
+          </tr>
+          <tr>
+            <th>Date of Birth</th>
+            <td>{patient.birthDate}</td>
+          </tr>
+          <tr>
+            <th>Added by</th>
+            <td>{patient.added_by}</td>
+          </tr>
+        </tbody>
+        </table>
+        </div>
 
-    )
+      <div className = "dashboardContainers">
+      <h3>Blood Pressure Data for {patient.first_name}</h3>
+      {patient.patient_blood_pressure_data && patient.patient_blood_pressure_data.length > 0 ? (
+        <table className="table custom-bp-table table-striped table-sm w-auto">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Systolic</th>
+              <th>Diastolic</th>
+              <th>Pulse</th>
+            </tr>
+          </thead>
+          <tbody>
+            {patient.patient_blood_pressure_data.map((record, index) => (
+              <tr key={index}>
+                <td>{record.timestamp}</td>
+                <td>{record.systolic}</td>
+                <td>{record.diastolic}</td>
+                <td>{record.pulse}</td>
+              </tr>
+            ))}
+          </tbody>
+          </table>
+      ) : (
+        <div>No blood pressure data found.</div>
+      )}
+      </div>
+
+      <div className = "chartContainer">
+        <BloodPressureChart patient_blood_pressure_data={patient.patient_blood_pressure_data} />
+      </div>
+    </>
+  );
 };
 
 export default withAuth(PatientDetail);
-
