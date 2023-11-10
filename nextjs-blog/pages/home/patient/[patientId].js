@@ -105,7 +105,7 @@ const PatientDetail = () => {
       )}
       </div>
 
-      <div>
+      <div className = "chartContainer">
         <BloodPressureChart patient_blood_pressure_data={patient.patient_blood_pressure_data} />
       </div>
     </>

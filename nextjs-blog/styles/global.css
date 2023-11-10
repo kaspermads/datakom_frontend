@@ -66,3 +66,9 @@ img {
 .overskrift {
   text-align: center;
 }
+
+.chartContainer {
+  width: 50%;
+  height: 70%;
+  margin-top: 20px;
+}
