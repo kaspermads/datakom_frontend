@@ -2,9 +2,11 @@ import React from "react";
 import { Line } from "react-chartjs-2";
 import 'chart.js/auto';
 import withAuth from './withAuthentication'
+import { Line } from '@reactchartjs/react-chart.js'
 
 
-const bloodPressureChart = ({ patient_blood_pressure_data }) => {
+
+const BloodPressureChart = ({ patient_blood_pressure_data }) => {
 
     const data = {
         labels: patient_blood_pressure_data.map((data) => new Date(data.timestamp).toLocalDateString()),
@@ -35,4 +37,4 @@ const bloodPressureChart = ({ patient_blood_pressure_data }) => {
     };
     return <Line data={data} options={options} />;
 };
-    export default withAuth(bloodPressureChart);
+    export default withAuth(BloodPressureChart);

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import withAuth from '../../../components/withAuthentication';
-import bloodPressureChart from '../../../components/charts';
+import BloodPressureChart from '../../../components/charts';
 
 
 const PatientDetail = () => {
@@ -106,7 +106,7 @@ const PatientDetail = () => {
       </div>
 
       <div>
-        <bloodPressureChart patient_blood_pressure_data={patient.patient_blood_pressure_data} />
+        <BloodPressureChart patient_blood_pressure_data={patient.patient_blood_pressure_data} />
       </div>
     </>
   );
