@@ -120,7 +120,7 @@ const PatientDetail = () => {
               </tr>
             </thead>
             <tbody>
-              {patient.patient_oxygen_saturation_data.map((record, index) => (
+              {patient.patient_blood_oxygen_saturation_data.map((record, index) => (
                 <tr key={index}>
                   <td>{record.timestamp}</td>
                   <td>{record.saturation}</td>
@@ -139,7 +139,7 @@ const PatientDetail = () => {
       </div>
 
       <div className="chartContainer">
-        <OxygenSaturationChart patient_oxygen_saturation_data={patient.patient_oxygen_saturation_data} />
+        <OxygenSaturationChart patient_blood_oxygen_saturation_data={patient.patient_blood_oxygen_saturation_data} />
       </div>
     </>
   );
