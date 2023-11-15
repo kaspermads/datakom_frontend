@@ -5,14 +5,14 @@ import withAuth from './withAuthentication'
 
 
 
-const OxygenSaturationChart = ({ patient_oxygen_saturation_data }) => {
+const OxygenSaturationChart = ({ patient_blood_oxygen_saturation_data }) => {
 
     const data = {
-        labels: patient_oxygen_saturation_data.map((data) => new Date(data.timestamp).toLocaleDateString()),
+        labels: patient_blood_oxygen_saturation_data.map((data) => new Date(data.timestamp).toLocaleDateString()),
         datasets :[
             {
                 label: "Saturation",
-                data: patient_oxygen_saturation_data.map((data) => data.oxygen_saturation),
+                data: patient_blood_oxygen_saturation_data.map((data) => data.oxygen_saturation),
                 fill: false,
                 backgroundColor: "rgba(255, 99, 132, 0.2)",
                 borderColor: "rgba(255, 99, 132, 1)",

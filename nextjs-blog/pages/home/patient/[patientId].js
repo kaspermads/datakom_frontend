@@ -111,7 +111,7 @@ const PatientDetail = () => {
       
       <div className="dashboardContainers">
         <h3>Oxygen Saturation data for {patient.first_name}</h3>
-        {patient.patient_oxygen_saturation_data && patient.patient_oxygen_saturation_data.length > 0 ? (
+        {patient.patient_blood_oxygen_saturation_data && patient.patient_blood_oxygen_saturation_data.length > 0 ? (
           <table className="table custom-bp-table table-striped table-sm w-auto">
             <thead>
               <tr>
@@ -129,7 +129,7 @@ const PatientDetail = () => {
             </tbody>
           </table>
         ) : (
-          <div>No oxygen saturation data found.</div>
+          <div>No oxygen saturation data found for the patient.</div>
         )}
       </div>
 
