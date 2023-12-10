@@ -12,12 +12,11 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Perform the API call and chedk response
+    // Perform the API call and check response
     try {
       const response = await fetch(
-        "https://api.kaspergaupmadsen.no/api/token/",
+        "https://api.kaspergaupmadsen.no/api/login/",
         {
-          //const response = await fetch('http://localhost:8000/api/token/', {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
