@@ -12,7 +12,7 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Perform the API call
+    // Perform the API call and chedk response
     try {
       const response = await fetch(
         "https://api.kaspergaupmadsen.no/api/token/",
