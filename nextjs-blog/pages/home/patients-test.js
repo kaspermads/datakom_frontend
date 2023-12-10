@@ -10,9 +10,14 @@ import withAuth from '../../components/withAuthentication'
 const Patients = () => {
   const [patients, setPatients] = useState([]);
   const [loading, setLoading] = useState('');
+  
 
   useEffect(() => {
-    fetch("https://api.kaspergaupmadsen.no/Patients/")
+    fetch("https://api.kaspergaupmadsen.no/Patients/", {
+      method: "GET",
+      credentials: "include",
+    })
+      
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -32,19 +37,39 @@ const Patients = () => {
   if (loading) {
     return <div>Loading...</div>;
   }
+  const handleRowClick = (patientId) => {
+    Router.push(`/home/patient/${patientId}`);
+  };
+
 
   return (
       <>
-          
-        <h5>Patients List</h5>
-        <ul>
-            {patients.map((patient, index) => (
-            <li key={index}>
-                {patient.first_name} {patient.last_name} - Birthdate:{" "}
-                {patient.birthDate}
-            </li>
+      
+      <h5>Patients List</h5>
+      
+      <table className = "table table-striped table-sm table-hover w-auto">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Date of Birth</th>
+          </tr>
+        </thead>
+        <tbody>
+            {patients.map((patient) => (
+              <tr key={patient.id} onClick={() => handleRowClick(patient.id)}>
+                <td>{patient.id}</td>
+
+                <td>{patient.first_name}</td>
+                <td>{patient.last_name}</td>  
+                <td>{patient.birthDate}</td>
+              </tr>
+
             ))}
-          </ul>
+        </tbody>
+      </table>
+
     </>
     );
 };

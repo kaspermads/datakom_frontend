@@ -40,12 +40,11 @@ const AddPatient = () => {
             last_name: lastName,
             birthDate: formattedBirthDate,
             address: address,
-            phone_number: phoneNumber};
+            phone: phoneNumber};
 
         // Perform the API call
         try {
             const response = await fetch('https://api.kaspergaupmadsen.no/api/register-patient/', {
-            //const response = await fetch('http://localhost:8000/api/register-patient/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
