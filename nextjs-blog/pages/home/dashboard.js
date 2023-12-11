@@ -1,12 +1,9 @@
-import Router from "next/router";
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import Patients from "./patients-test";
 import AddPatient from "./add-patient";
-import Layout from "../../components/navbar";
 import { AuthContext } from "../../components/AuthContext";
 import withAuth from "../../components/withAuthentication";
 
-import MainNavigation from "../../components/Layout/MainNavigatin";
 
 function Dashboard() {
   const [activePage, setActivePage] = useState("patients");

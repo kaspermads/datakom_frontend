@@ -24,7 +24,6 @@ export const AuthProvider = ({ children }) => {
                 try {
                     // Replace '/api/verify' with your API endpoint that checks for authentication
                     const response = await fetch('https://api.kaspergaupmadsen.no/api/token/verify/', {
-                    //const response = await fetch('http://localhost:8000/api/token/verify/', {
                         method: 'POST',
                         credentials: 'include' // Needed to include the HttpOnly cookie in the request
                     });

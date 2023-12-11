@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import withAuth from '../../../components/withAuthentication';
 import BloodPressureChart from '../../../components/charts';
+import OxygenSaturationChart from '../../../components/o2_chart';
 
 
 const PatientDetail = () => {
@@ -103,11 +104,42 @@ const PatientDetail = () => {
           </table>
       ) : (
         <div>No blood pressure data found.</div>
+        
+        
       )}
       </div>
+      
+      <div className="dashboardContainers">
+        <h3>Oxygen Saturation data for {patient.first_name}</h3>
+        {patient.patient_blood_oxygen_saturation_data && patient.patient_blood_oxygen_saturation_data.length > 0 ? (
+          <table className="table custom-bp-table table-striped table-sm w-auto">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Saturation</th>
+              </tr>
+            </thead>
+            <tbody>
+              {patient.patient_blood_oxygen_saturation_data.map((record, index) => (
+                <tr key={index}>
+                  <td>{record.timestamp}</td>
+                  <td>{record.saturation}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <div>No oxygen saturation data found for the patient.</div>
+        )}
+      </div>
+
 
       <div className = "chartContainer">
         <BloodPressureChart patient_blood_pressure_data={patient.patient_blood_pressure_data} />
+      </div>
+
+      <div className="chartContainer">
+        <OxygenSaturationChart patient_blood_oxygen_saturation_data={patient.patient_blood_oxygen_saturation_data} />
       </div>
     </>
   );

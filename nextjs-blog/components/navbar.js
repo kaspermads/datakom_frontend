@@ -6,8 +6,7 @@ import Link from 'next/link';
 
 
 import Router from "next/router";
-import { AuthContext } from "./AuthContext";
-import { useContext } from "react";
+
 
 export default function Layout({ children, showNavbar = true }) {
   const { isAuthenticated, logout } = useContext(AuthContext);
