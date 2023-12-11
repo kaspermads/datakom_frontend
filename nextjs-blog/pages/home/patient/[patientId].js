@@ -123,7 +123,7 @@ const PatientDetail = () => {
               {patient.patient_blood_oxygen_saturation_data.map((record, index) => (
                 <tr key={index}>
                   <td>{record.timestamp}</td>
-                  <td>{record.saturation}</td>
+                  <td>{record.oxygen_saturation}</td>
                 </tr>
               ))}
             </tbody>
