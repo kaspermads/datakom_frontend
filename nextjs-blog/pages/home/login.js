@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { AuthContext } from "../components/AuthContext";
+import AuthContext  from "../components/AuthContext";
 import Router from "next/router";
 import LayoutLogin from "../components/LayoutLogin";
 
