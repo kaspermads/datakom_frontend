@@ -3,6 +3,8 @@ import Link from "next/link";
 import { AuthContext } from "../AuthContext";
 
 import classes from "../../styles/MainNavigation.module.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 
 export default function MainNavigation({children, showNav = true}) {

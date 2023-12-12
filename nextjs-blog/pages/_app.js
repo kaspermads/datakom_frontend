@@ -1,6 +1,5 @@
 import { AuthProvider } from "../components/AuthContext";
 import "../styles/global.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import MainNavigation from "../components/Layout/MainNavigatin";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
