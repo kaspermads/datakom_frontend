@@ -15,7 +15,7 @@ body {
     Droid Sans,
     Helvetica Neue,
     sans-serif;
-   background-color: darkslategrey; 
+   background-color: #212529; 
    color: #fff;
 }
 
@@ -63,6 +63,8 @@ img {
   align-items: center;
   justify-content: center;
   margin-top: 20px;
+  background-color: #212529;
+  color:#fff;
 }
 
 .overskrift {
@@ -74,6 +76,9 @@ img {
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+  background-color: #212529;
+  color:#fff;
+  width: 60%;
 }
 
 .chartContainer .chart{
