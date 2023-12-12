@@ -33,7 +33,7 @@ const PatientDetail = () => {
   }, [patientId]);
 
   if (loading) {
-    return <div class="d-flex justify-content-center">
+    return <div class="d-flex flex-column justify-content-center">
     <div class="spinner-border" role="status">
       <span class="sr-only">Loading...</span>
     </div>
@@ -116,7 +116,7 @@ const PatientDetail = () => {
       <div className="dashboardContainers">
         <h3>Oxygen Saturation data for {patient.first_name}</h3>
         {patient.patient_blood_oxygen_saturation_data && patient.patient_blood_oxygen_saturation_data.length > 0 ? (
-          <table className="table table-bordered table-striped table-sm w-15 p-3">
+          <table className="table table-dark table-bordered table-striped table-sm w-15 p-3">
             <thead className = "thead-dark">
               <tr>
                 <th>Date</th>

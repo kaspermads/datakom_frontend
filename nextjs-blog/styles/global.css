@@ -1,4 +1,7 @@
-html,
+html {
+  background-color: #212529;
+  color: #fff;
+}
 body {
   padding: 0;
   margin: 0;
@@ -15,8 +18,13 @@ body {
     Droid Sans,
     Helvetica Neue,
     sans-serif;
-   background-color: #212529; 
-   color: #fff;
+  background-color: #212529; 
+  color: #fff;
+}
+
+dark-mode {
+  background-color: #212529;
+  color: #fff;
 }
 
 a {

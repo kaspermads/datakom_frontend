@@ -18,9 +18,11 @@ export default function App({ Component, pageProps }) {
 
   return (
     <AuthProvider>
+      <div className = "dark-mode">
       <MainNavigation showNav={showNav}>
         <Component {...pageProps} />
       </MainNavigation>
+      </div>
     </AuthProvider>
   );
 }
