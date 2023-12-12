@@ -35,7 +35,9 @@ const Patients = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div class="spinner-grow" role="status">
+           <span class="sr-only">Loading...</span>
+           </div>;
   }
   const handleRowClick = (patientId) => {
     Router.push(`/home/patient/${patientId}`);

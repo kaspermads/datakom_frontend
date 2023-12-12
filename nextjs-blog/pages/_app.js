@@ -7,7 +7,9 @@ import { useRouter } from "next/router";
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
-  const showNav = router.pathname !== "/" && router.pathname !== "/home/login" && router.pathname !== "/home/register-test";
+  const showNav = router.pathname !== "/" && 
+                  router.pathname !== "/home/login" && 
+                  router.pathname !== "/home/register-test";
 
   return (
     <AuthProvider>
