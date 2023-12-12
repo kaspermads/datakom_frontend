@@ -33,7 +33,9 @@ const PatientDetail = () => {
   }, [patientId]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>;
   }
 
   if (!patient) {

@@ -46,7 +46,7 @@ const Patients = () => {
 
   return (
       <>
-      
+      <div className = "dashboardContainers">
       <h5>Patients List</h5>
       
       <table className = "table table-striped table-sm table-hover w-auto">
@@ -71,7 +71,7 @@ const Patients = () => {
             ))}
         </tbody>
       </table>
-
+      </div>
     </>
     );
 };
