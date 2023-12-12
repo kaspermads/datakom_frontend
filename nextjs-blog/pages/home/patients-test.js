@@ -49,6 +49,7 @@ const Patients = () => {
       <h5>Patients List</h5>
       
       <table className = "table table-striped table-bordered table-dark table-sm table-hover w-50 p-3">
+        <caption>List of all patients</caption>
         <thead className = "thead-dark">
           <tr>
             <th>ID</th>

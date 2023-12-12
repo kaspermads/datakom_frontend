@@ -48,7 +48,7 @@ const PatientDetail = () => {
     <>
       <div className = "dashboardContainers">
       <h3>Patient Details</h3>
-      <table className="table table-dark table-striped table-hover w-15 p-3">
+      <table className="table table-dark table-striped table-bordered table-sm table-hover w-50 p-3">
         <tbody>
           <tr>
             <th id="overskrift">ID</th>
@@ -86,7 +86,7 @@ const PatientDetail = () => {
       <div className = "dashboardContainers">
       <h3>Blood Pressure Data for {patient.first_name}</h3>
       {patient.patient_blood_pressure_data && patient.patient_blood_pressure_data.length > 0 ? (
-        <table className="table table-dark table-bordered table-striped table-sm w-30 p-3">
+        <table className="table table-dark table-bordered table-striped table-sm w-50 p-3">
           <thead className = "thead-dark">
             <tr>
               <th>Date</th>
@@ -116,7 +116,7 @@ const PatientDetail = () => {
       <div className="dashboardContainers">
         <h3>Oxygen Saturation data for {patient.first_name}</h3>
         {patient.patient_blood_oxygen_saturation_data && patient.patient_blood_oxygen_saturation_data.length > 0 ? (
-          <table className="table table-dark table-bordered table-striped table-sm w-15 p-3">
+          <table className="table table-dark table-bordered table-striped table-sm w-50 p-3">
             <thead className = "thead-dark">
               <tr>
                 <th>Date</th>
