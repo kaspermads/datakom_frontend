@@ -48,7 +48,7 @@ const BloodPressureChart = ({ patient_blood_pressure_data }) => {
                 text: "Blood Pressure Chart",
             },
             canvasArea:{
-                backgroundColor: "darkgrey",
+                backgroundColor: "black",
             },
         },
     };
