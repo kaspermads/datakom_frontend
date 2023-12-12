@@ -23,9 +23,9 @@ function Dashboard() {
 
 
   return isAuthenticated ? <main>{DashboardContent()}</main> : <div class="d-flex justify-content-center">
-                                                                  <div class="spinner-border" role="status">
-                                                                    <span class="sr-only">Loading...</span>
-                                                                  </div>
-                                                                </div>;
+  <div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
 }
 export default withAuth(Dashboard);
