@@ -87,7 +87,7 @@ const PatientDetail = () => {
       <h3>Blood Pressure Data for {patient.first_name}</h3>
       {patient.patient_blood_pressure_data && patient.patient_blood_pressure_data.length > 0 ? (
         <table className="table custom-bp-table table-striped table-sm w-auto">
-          <thead>
+          <thead className = "thead-dark">
             <tr>
               <th>Date</th>
               <th>Systolic</th>
@@ -117,7 +117,7 @@ const PatientDetail = () => {
         <h3>Oxygen Saturation data for {patient.first_name}</h3>
         {patient.patient_blood_oxygen_saturation_data && patient.patient_blood_oxygen_saturation_data.length > 0 ? (
           <table className="table custom-bp-table table-striped table-sm w-auto">
-            <thead>
+            <thead className = "thead-dark">
               <tr>
                 <th>Date</th>
                 <th>Saturation</th>

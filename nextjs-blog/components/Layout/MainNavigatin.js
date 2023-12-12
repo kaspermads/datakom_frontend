@@ -18,12 +18,12 @@ export default function MainNavigation({children, showNav = true}) {
         <>
         {showNav && (
         <header className={classes.header}>
-            <div className={classes.logo}>Gruppe 4 Helsetjeneste</div>
+            <div className={classes.logo}><Link href = "/home/patients-test"><a>Gruppe 4 Helsetjeneste</a></Link></div>
             <nav>
                 <ul>
                     <li>
                         <Link href="/home/patients-test">
-                            <a>All Patients</a>
+                            <a>Patients</a>
                         </Link>
                     </li>
                     <li>

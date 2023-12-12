@@ -52,7 +52,7 @@ const Patients = () => {
       <h5>Patients List</h5>
       
       <table className = "table table-striped table-sm table-hover w-auto">
-        <thead>
+        <thead className = "thead-dark">
           <tr>
             <th>ID</th>
             <th>First Name</th>
