@@ -1,4 +1,6 @@
 import { AuthProvider } from "../components/AuthContext";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 import "../styles/global.css";
 import MainNavigation from "../components/Layout/MainNavigatin";
 import { useRouter } from "next/router";
