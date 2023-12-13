@@ -31,6 +31,18 @@ const OxygenSaturationChart = ({ patient_blood_oxygen_saturation_data }) => {
             title: {
                 display: true,
                 text: "Oxygen Saturation Chart",
+                font: {
+                    size: 22,
+                    color: "#ffffff",
+                },
+            },
+            legend: {
+                labels: {
+                    font: {
+                        size: 18,
+                        color: "#ffffff",
+                    },
+                },
             },
         },
     };
