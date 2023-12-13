@@ -46,13 +46,17 @@ const BloodPressureChart = ({ patient_blood_pressure_data }) => {
             title: {
                 display: true,
                 text: "Blood Pressure Chart",
-                fontSize: 20,
-                fontColor: "#fff",
+                font: {
+                    size: 20,
+                    color: "#fff",
+                },
             },
             legend: {
                 labels: {
-                    fontColor: "#fff",
-                    fontSize: 16,
+                    font: {
+                        size: 16,
+                        color: "#fff",
+                    },
                 },
             }
            
