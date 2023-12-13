@@ -46,6 +46,7 @@ const BloodPressureChart = ({ patient_blood_pressure_data }) => {
             title: {
                 display: true,
                 text: "Blood Pressure Chart",
+                color: "#ffffff",
                 font: {
                     size: 22,
                     color: "#ffffff",
