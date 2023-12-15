@@ -19,7 +19,11 @@ export const AuthProvider = ({ children }) => {
 
 
     useEffect(() => {
-        if (router.pathname !== '/' && router.pathname !== '/home/login' && router.pathname !== '/home/register-test') {
+        if (
+        router.pathname !== '/' && 
+        router.pathname !== '/home/login' && 
+        router.pathname !== '/home/register-test')
+        {
             const verifyToken = async () => {
                 try {
                     // Replace '/api/verify' with your API endpoint that checks for authentication

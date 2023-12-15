@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Router from 'next/router';
-import styles from '../../components/layout.module.css';
-import Link from 'next/link';
-import Layout from "../../components/navbar";
 import withAuth from '../../components/withAuthentication'
 
 
@@ -35,7 +32,11 @@ const Patients = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div class="d-flex flex-column justify-content-center">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>;
   }
   const handleRowClick = (patientId) => {
     Router.push(`/home/patient/${patientId}`);
@@ -44,11 +45,12 @@ const Patients = () => {
 
   return (
       <>
-      
+      <div className = "dashboardContainers">
       <h5>Patients List</h5>
       
-      <table className = "table table-striped table-sm table-hover w-auto">
-        <thead>
+      <table className = "table table-striped table-bordered table-dark table-sm table-hover w-50 p-3">
+        <caption>List of all patients</caption>
+        <thead className = "thead-dark">
           <tr>
             <th>ID</th>
             <th>First Name</th>
@@ -69,7 +71,7 @@ const Patients = () => {
             ))}
         </tbody>
       </table>
-
+      </div>
     </>
     );
 };

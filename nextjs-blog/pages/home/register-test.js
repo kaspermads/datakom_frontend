@@ -64,6 +64,7 @@ const Register = () => {
                     <input
                         type="email"
                         className="form-control"
+                        placeholder='example@mail.com'
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
@@ -73,10 +74,14 @@ const Register = () => {
                     <input
                         type="password"
                         className="form-control"
+                        aria-describedby='passwordHelpBlock'
                         value={password1}
                         onChange={(e) => setPassword1(e.target.value)}
                         required
                     />
+                    <div id='passwordHelpBlock' className='form-text'>
+                        Your password must be 8-20 characters long, contain letters and numbers, and atleast one uppercase character.
+                    </div>
                 </div>
                 <div className="col-md-6">
                     <label className="form-label">Confirm Password</label>

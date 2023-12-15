@@ -1,4 +1,5 @@
 import Head from 'next/head';
+
 import styles from '../styles/Home.module.css';
 
 
@@ -24,7 +25,7 @@ export default function Home() {
         <div className={styles.grid}>
           <a href="/home/register-test" className={styles.card}>
             <h3>Register &rarr;</h3>
-            <p>Register with you information to gain access.</p>
+            <p>Register with your information to gain access.</p>
           </a>
 
           <a href="/home/login" className={styles.card}>
