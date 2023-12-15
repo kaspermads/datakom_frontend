@@ -1,9 +1,10 @@
+//importing libraries
 import Router  from 'next/router';
 import React, { createContext, useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 
 
-
+//creating a context for authentication
 export const AuthContext = createContext({
 
     isAuthenticated: false,
@@ -12,12 +13,17 @@ export const AuthContext = createContext({
     logout: () => { }
 });
 
+//creating a provider for authentication
+//setting the authentication to false
+//setting the loading to true
+//setting the router
 export const AuthProvider = ({ children }) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     const router = useRouter();
 
-
+//using useEffect to verify the token
+//using api call to verify the token
     useEffect(() => {
         if (
         router.pathname !== '/' && 
@@ -26,19 +32,22 @@ export const AuthProvider = ({ children }) => {
         {
             const verifyToken = async () => {
                 try {
-                    // Replace '/api/verify' with your API endpoint that checks for authentication
+                    //using api call to verify the token
                     const response = await fetch('https://api.kaspergaupmadsen.no/api/token/verify/', {
                         method: 'POST',
                         credentials: 'include' // Needed to include the HttpOnly cookie in the request
                     });
           
                     if (response.ok) {
+                        // If the token is valid, set the authentication to true
                         setIsAuthenticated(true);
                     } else {
+                        // If the token is invalid, remove it from the browser
                         setIsAuthenticated(false);
                         Router.push('/');
                     }
                 } catch (error) {
+                    // If the token is invalid, remove it from the browser
                     setIsAuthenticated(false);
                     Router.push('/');
                 }
@@ -53,7 +62,7 @@ export const AuthProvider = ({ children }) => {
 
 
   
-
+//using api call to logout
     const logout = async () => {
         try {
             const response = await fetch('https://api.kaspergaupmadsen.no/api/logout/', {
@@ -63,6 +72,7 @@ export const AuthProvider = ({ children }) => {
             });
 
             if (response.ok) {
+
                 setIsAuthenticated(false);
                 Router.push('/');
             } else {
@@ -77,8 +87,9 @@ export const AuthProvider = ({ children }) => {
     };
     
         
-
+//returning the authentication
   return (
+    //Using AuthContext.Provider to provide the authentication
     <AuthContext.Provider value={{ isAuthenticated, isLoading, login, logout }}>
       {children}
     </AuthContext.Provider>
