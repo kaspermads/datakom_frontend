@@ -80,7 +80,7 @@ const Register = () => {
                         required
                     />
                     <small id='passwordHelpBlock' className='form-text'>
-                        Your password must be 8-20 characters long, contain letters and numbers, and at Dleast one uppercase character.
+                        Your password must be 8-20 characters long, contain letters and numbers, and at least one uppercase character.
                     </small>
                 </div>
                 <div className="col-md-6">
