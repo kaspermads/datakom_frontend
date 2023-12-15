@@ -5,6 +5,7 @@ import BloodPressureChart from '../../../components/charts';
 import OxygenSaturationChart from '../../../components/o2_chart';
 
 
+//The PatientDetail component is used to display the patient details page, which is when you click on a patient in the patients list.
 const PatientDetail = () => {
   const [patient, setPatient] = useState(null);
   //const {bloodPressureData, setBloodPressureData} = useState([]);
@@ -12,6 +13,8 @@ const PatientDetail = () => {
   const router = useRouter();
   const { patientId } = router.query;
 
+
+  //The useEffect hook is used to fetch data from the API.
   useEffect(() => {
     if (patientId) {
       //Fetch patient data
@@ -20,11 +23,14 @@ const PatientDetail = () => {
         credentials: "include",
       })
 
+        //The response is checked to see if it is ok. If it is, the data is set to the patient state.
         .then((response) => response.json())
         .then((data) => {
           setPatient(data);
           setLoading(false);
         })
+
+        //If there is an error, it is logged to the console.
         .catch((error) => {
           console.error("Error fetching patient data:", error);
           setLoading(false);
@@ -32,6 +38,8 @@ const PatientDetail = () => {
     }
   }, [patientId]);
 
+
+  //If the data is still loading, a spinner is displayed.
   if (loading) {
     return <div class="d-flex flex-column justify-content-center">
     <div class="spinner-border" role="status">
@@ -40,10 +48,13 @@ const PatientDetail = () => {
   </div>;
   }
 
+  //If there is no patient data, a message is displayed.
   if (!patient) {
     return <div>No patient data found.</div>;
   }
 
+  //The patient details are displayed in a table. The table is styled using bootstrap.
+  //Maps through the patient array and displays the data in the table.
   return (
     <>
       <div className = "dashboardContainers">

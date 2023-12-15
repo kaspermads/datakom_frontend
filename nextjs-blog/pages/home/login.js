@@ -4,18 +4,18 @@ import Router from "next/router";
 import LayoutLogin  from "../../components/layout";
 
 
-// Login funksjonen som brukes for å logge inn på siden.
+//The Login component is used to display and handle the login form.
 const Login = () => {
   const { login } = useContext(AuthContext);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  // Håndterer submit av login.
+  // The handleSubmit function is used to handle the submit of the form.
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Kaller på APIet for å logge inn. (Fra Django).
+    // Calls the API to login
     // Perform the API call and check response
     try {
       const response = await fetch(
@@ -26,6 +26,8 @@ const Login = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({ username, password }),
+
+          //
           credentials: "include",
         }
       );
@@ -42,6 +44,9 @@ const Login = () => {
     }
   };
 
+  //Notice that the entire form is wrapped in LayoutLogin. 
+  //This is because the login page should not have the same layout as the rest of the pages.
+  //The login page should not have the navigation bar for example.
   return (
     <>
       <LayoutLogin>
