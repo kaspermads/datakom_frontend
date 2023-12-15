@@ -79,7 +79,7 @@ const Register = () => {
                         onChange={(e) => setPassword1(e.target.value)}
                         required
                     />
-                    <small id='passwordHelpBlock' className='form-text text-muted'>
+                    <small id='passwordHelpBlock' className='form-text'>
                         Your password must be 8-20 characters long, contain letters and numbers, and at Dleast one uppercase character.
                     </small>
                 </div>
