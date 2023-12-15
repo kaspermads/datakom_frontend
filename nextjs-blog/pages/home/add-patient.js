@@ -5,14 +5,14 @@ import Layout from '../../components/layout';
 import withAuth from '../../components/withAuthentication'
 
 
-
+//CSRF token is used to prevent cross-site request forgery attacks.
 function getCSRFToken() {
     const csrfToken = document.cookie.match(new RegExp('(^| )csrftoken=([^;]+)'));
     return csrfToken ? csrfToken[2] : null;
 }
 
 
-
+//The AddPatient component is used to display and handle the add patient form.
 const AddPatient = () => {
     const [firstName, setfirstName] = useState('');
     const [lastName, setlastName] = useState('');
@@ -31,10 +31,14 @@ const AddPatient = () => {
             }
         }, []); 
 
+    //The handleSubmit function is used to handle the submit of the form.
     const handleSubmit = async (event) => {
+
+        //The event is prevented from refreshing the page.
         event.preventDefault();
         const formattedBirthDate = birthDate.split('/').reverse().join('-');
         
+        //The patient data is set to the patientData variable.
         const patientData = {
             first_name: firstName,
             last_name: lastName,
@@ -50,24 +54,31 @@ const AddPatient = () => {
                     'Content-Type': 'application/json',
                     ...(csrfToken ? { 'X-CSRFToken': csrfToken } : {}),
                 },
+
+                //The patient data is sent to the API.
                 body: JSON.stringify(patientData),
                 credentials: 'include',
             });
 
 
+            //If the response is ok, the user is redirected to the dashboard page.
             if (response.ok) {
                 Router.push('/home/dashboard/');
 
+            //If the response is not ok, an error message is displayed.
             } else {
                 const errData = await response.json();
                 setError(errData.detail || 'An error occurred while adding the patient.');
             }
             
+        //If there is an error, it is logged to the console.
         } catch (error) {
             setError('An error occurred. Please try again.');
         }
     };
 
+    //The form is displayed. The form is styled using bootstrap. The form is submitted when the submit button is clicked.
+    //The data is sent to the handleSubmit function.
     return (
         <>
             <Layout>
