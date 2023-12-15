@@ -1,13 +1,13 @@
+//importing libraries
 import Head from 'next/head';
 
 import { AuthContext } from './AuthContext';
 import { useContext } from 'react';
-import Link from 'next/link';
-
+import link from 'next/link';
 
 import Router from "next/router";
 
-
+//creating the layout for the pages
 export default function Layout({ children, showNavbar = true }) {
   const { isAuthenticated, logout } = useContext(AuthContext);
 
@@ -15,7 +15,8 @@ export default function Layout({ children, showNavbar = true }) {
     e.preventDefault();
     logout();
   };
-
+  //creating the navigation
+  //using the link to navigate to the different pages
   return (
     <>
       <Head>

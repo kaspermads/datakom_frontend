@@ -1,3 +1,4 @@
+// Import libraries
 import Head from 'next/head';
 
 import styles from '../styles/Home.module.css';
@@ -5,10 +6,17 @@ import styles from '../styles/Home.module.css';
 
 
 
+
+// defining and exporting the home page(start page)
+// creating a header with the title and icon
+// creating a main section with the title and description
+// creating a grid with two cards one for register and one for login
+
+
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <Head>
+    <div className={styles.container}> 
+      <Head> 
         <title>Patient Portal</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>

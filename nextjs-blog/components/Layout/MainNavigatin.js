@@ -1,3 +1,4 @@
+// imorting libraries
 import { useContext } from "react";
 import Link from "next/link";
 import { AuthContext } from "../AuthContext";
@@ -6,15 +7,19 @@ import classes from "../../styles/MainNavigation.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
-
+//creating the main navigation
 export default function MainNavigation({children, showNav = true}) {
     const { isAuthenticated, logout } = useContext(AuthContext);
-
+//creating the logout handler
+//using logout function
     const logoutHandler = async (e) => {
         e.preventDefault();
         logout();
     };
 
+
+    //creating the navigation
+    //using the link to navigate to the different pages
     return (
 
         <>

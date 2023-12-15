@@ -1,10 +1,12 @@
+// import libraries
 import React from "react";
 import { Line } from "react-chartjs-2";
 import 'chart.js/auto';
 import withAuth from './withAuthentication'
 
 
-
+//creating the blood pressure chart
+//setting the data for the chart
 const BloodPressureChart = ({ patient_blood_pressure_data }) => {
 
     const data = {
@@ -34,7 +36,7 @@ const BloodPressureChart = ({ patient_blood_pressure_data }) => {
 
         ],
     };
-
+    //setting the options for the chart
     const options = {
         scales: {
             y: {
@@ -64,4 +66,5 @@ const BloodPressureChart = ({ patient_blood_pressure_data }) => {
     };
     return <Line data={data} options={options} />;
 };
+    //exporting the blood pressure chart
     export default withAuth(BloodPressureChart);
